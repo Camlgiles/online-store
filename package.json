@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "inspect": "nodemon index.js --inspect",
     "dev": "nodemon index.js"
   },
   "author": "",
