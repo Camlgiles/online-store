@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import ProductIndex from "./products/ProductsIndex";
-import {Route, HashRouter} from "react-router-dom";
-
+import Login from "./Login"
+import {Route, HashRouter, Switch} from "react-router-dom";
+import AuthRoute from '../util/route_util';
+import Nav from './Nav';
 
 
 const App = () => {
@@ -11,7 +13,11 @@ const App = () => {
     <div>
       <h1>Online Store</h1>
     <HashRouter>
-     <Route exact path="/" component={ProductIndex} />
+        <Route path="/" component={Nav} />
+    <Switch>
+        <AuthRoute exact path="/login" component={Login} routeType="auth" />
+        <Route path="/" component={ProductIndex} />
+      </Switch>
     </HashRouter>
  
 
