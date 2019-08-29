@@ -21,5 +21,5 @@ const ProductType = new GraphQLObjectType({
     weight: { type: GraphQLInt }
   })
 })
- 
+
 module.exports = ProductType;
