@@ -13,11 +13,11 @@ const ProductsIndex = () => {
 
         return (
           <ul>
-            {data.products.map(product => (
-              <div>
+            {data.products.map((product, i) => (
+              <div key={i + `${product._id}` + i * (i + `${product._id}` + i)}>
                 <li key={product._id}>{product.name}</li>
-                <ul>
-                  <li>${product.cost}.00</li>
+                <ul key={i + `${product._id}` + i}>
+                  <li key={i + `${product._id}`}>${product.cost}.00</li>
                 </ul>
               </div>
             ))}
